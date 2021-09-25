@@ -1,2 +1,0 @@
-"This file created to demonstrate branches in git"
-Second line added through vim editor. 
