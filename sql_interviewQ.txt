@@ -1,0 +1,155 @@
+SECTION 1 ---------------------------------------------------------------------------------
+What is SQL?
+It is a structured query language, used to perform certain operations on databases.
+A Database is a collection of organized data which is stored, accessed and managed electronically.
+
+SECTION 2 ----------------------------------------------------------------------------------
+
+SQL is categorized into 5 types: DDL, DML, DQL, DCL and TCL.
+
+DDL : Data Definition Language
+consists of SQL commands that are used to define the database structure or schema(blueprint/skeleton).
+DDL is used to create and modify the structure of database and not the data.
+CREATE, ALTER, DROP and TRUNCATE.
+
+CREATE 		: used to create the database and it's objects like, tables, views, functions/procedures 			and triggers.
+ALTER	 	: used to alter the structure of DB, tables, etc.
+DROP	 	: used to delete databae or it's objects like tables, etc.
+TRUNCATE 	: used to delete all the records from a table and free the space containing the table.
+
+DML : Data Manipulation Language - 
+DML has SQL commands that deal with the manipulation of data present in the database.
+DML commands are not auto-committed that means they can't permanently save all the changes in the database. They can be rollback.
+
+List of DML commands: 
+
+INSERT: It is used to insert data into a table.
+UPDATE: It is used to update existing data within a table.
+DELETE: It is used to delete records from a database table.
+
+DQL : Data Query Language - 
+used to fetch data from DB and perform queries on the data. used to retrieve data having some relation and order in it.
+SELECT	: used to fetch data according to some condition given in the query.
+
+DCL : Data Control Language - 
+consists of SQL statement that controls access to data and to the database. 
+DCL includes GRANT and REVOKE which mainly deal with the rights, permissions, and other controls of the database system. 
+
+List of  DCL commands: 
+
+GRANT: This command gives users access privileges to the database.
+REVOKE: This command withdraws the user’s access privileges given by using the GRANT command.
+
+TCL : Transaction Control Language - 
+TCL commands are used to manage the changes made by DML statements. Transactions group a set of tasks into a single execution unit. TCL commands are used to control the execution of a transaction.
+
+COMMIT: is used to save all the transaction-related changes permanently to the disk.
+SAVEPOINT: It marks and saves the current point in the processing of a transaction.
+ROLLBACK: command is used to restore database to original state since the last COMMIT.
+
+SECTION 3 ------------------------------------------------------------------------------------
+
+SQL DATATYPES - MySQL :
+
+Data types are used to represent the nature of the data that can be stored in the database table.
+
+DataTypes maily divided into 3 types:
+String Data types
+Numeric Data types
+Date and time Data types
+
+STRING datatype:
+1. CHAR(size) - Its size can be 0 to 255 characters. Default is 1. it is a String that can contain, 			numbers, letters and special characters.
+
+2. VARCHAR(size) - A String that can contain numbers, letters and special characters. Its size can be from 		0 to 65535 characters.
+
+3. BLOB(size) - It is used for BLOBs (Binary Large Objects). It can hold up to 65,535 bytes.
+
+# More String DataTypes on - https://www.javatpoint.com/sql-data-types
+
+NUMERIC datatype:
+1. INT(size) - also, INTEGER(size). It is used for the integer value. 
+
+2. FLOAT(size, d) - It is used to specify a floating point number. size parameter specifies the total number of digits. The number of digits after the decimal point is specified by d.
+
+3. DOUBLE(size, d) - It is a normal size floating point number. Its size parameter specifies the total number of digits. The number of digits after the decimal is specified by d parameter.
+
+4. BOOL - It is used to specify Boolean values true and false. Zero is considered as false, and nonzero values are considered as true.
+
+DATE and TIME datatypes:
+1. DATE - It is used to specify date format YYYY-MM-DD.
+
+2. DATETIME(fsp) - It is used to specify date and time combination. Its format is YYYY-MM-DD hh:mm:ss. fsp is the fractional seconds precision. 
+
+3. TIMESTAMP(fsp) - It is used to specify the timestamp. Its format is YYYY-MM-DD hh:mm:ss. Its supported range is from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC.
+
+4. TIME(fsp) - It is used to specify the time format. Its format is hh:mm:ss.
+
+5. YEAR - It is used to specify a year in four-digit format. Values allowed in four digit format from 1901 to 2155, and 0000.
+
+SECTION 4 --------------------------------------------------------------------------------------
+
+SQL Operators:
+**	Exponentiation operator
++, -	Identity operator, Negation operator
+*, /	Multiplication operator, Division operator
++, -, ||	Addition (plus) operator, subtraction (minus) operator, String Concatenation operator
+=, !=, <, >, <=, >=, IS NULL, LIKE, BETWEEN, IN	Comparison Operators
+NOT	Logical negation operator
+&& or AND	Conjunction operator
+OR	Inclusion operator
+
+SECTION 5 ------------------------------------------------------------------------------------
+
+SQL CONSTRAINTS:
+Constraints are the rules that we can apply to the type of data in a table. That is, we can specify the limit on the type of data that can be stored in a particular column in a table using constraints. 
+
+1. NOT NULL - Restricts NULL value from being inserted into a column.
+2. CHECK - Verifies that all values in a field satisfy a condition.
+3. DEFAULT - Automatically assigns a default value if no value has been specified for the field.
+4. UNIQUE - Ensures unique values to be inserted into the field. there can be multiple unique constraints 		defined per table.
+5. INDEX - Indexes a field providing faster retrieval of records.
+6. PRIMARY KEY - Uniquely identifies each record in a table. values cannot be NULL, A table in SQL is strictly restricted to have one and only one primary key, which is comprised of single or multiple fields.
+7. FOREIGN KEY - comprises of single or collection of fields in a table that essentially refers to the PRIMARY KEY in another table. 
+Ensures referential integrity for a record in another table.
+
+Q. What is Primary Key, Foreign Key? [ refer section 5 - points 6,7 ]
+
+SQL KEYS:
+Q. What is Unique Key?
+A unique key is a set of one or more than one fields/columns of a table that uniquely identify a record in a database table. It is like primary key but it ALLOWS one null value. There can be many Unique key but only one primary key per table.
+
+Q. What is Candidate Key?
+Keys which are used to identify rows uniquely. So, A primary key is a candidate key.
+
+Q. What is Composite Key?
+A composite key is a combination of two or more columns in a table that can be used to uniquely identify each row in the table.  It may be a candidate key or primary key.
+
+Q. What is an Alternate Key?
+Alternate Key is a candidate key which is not part of primary key.
+
+SECTION 6  --------------------------------------------------------------------------------------
+
+SQL JOINS:
+The SQL Join clause is used to combine records (rows) from two or more tables in a SQL database based on a related column between the two.
+
+There are 4 main JOINS:
+1] INNER JOIN - Retrieves records that have matching values in both tables involved in the join.
+
+2] LEFT JOIN - Retrieves all the records/rows from the left and the matched records/rows from the right table.
+
+3] RIGHT JOIN - Retrieves all the records/rows from the right and the matched records/rows from the left table.
+
+4] FULL JOIN - Retrieves all the records where there is a match in either the left or right table.
+
+# LEFT OUTER join, RIGHT OUTER join and FULL OUTER join are same as LEFT JOIN, RIGHT JOIN and FULL JOIN.
+
+5] SELF JOIN - a table is joined to itself based on some relation between its own column(s). Self-join uses the INNER JOIN or LEFT JOIN clause and a table alias is used to assign different names to the table within the query.
+
+6] CROSS JOIN - When each row of the first table is combined with each row from the second table, it is known as Cartesian join or cross join.
+After performing the cross join operation, the total number of rows present in the final table will be equal to the product of the number of rows present in table 1 and the number of rows present in table 2.
+E.g. table1 has 2 rows * table2 has 3 rows = resulting table has 6 rows.
+
+SECTION 7 ---------------------------------------------------------------------------------------
+
+
